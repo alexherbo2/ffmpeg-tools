@@ -1,0 +1,29 @@
+#!/bin/sh
+
+if test $# -lt 3 -o $# -gt 4; then
+  cat <<'EOF' | sed -E 's/^ {4}//' > /dev/stderr
+    Usage
+    ‾‾‾‾‾
+    ffmpeg-cut <input> <start-position> <end-position> <output>
+    ffmpeg-cut <input> <position> <output>
+
+    Examples
+    ‾‾‾‾‾‾‾‾
+    ffmpeg-cut 01.mkv 00:30 02:00 opening.mkv
+    ffmpeg-cut 01.mkv 00:30 01-00:30.jpg
+
+    See the “Time duration” section in the ffmpeg-utils manual.
+EOF
+  exit 1
+fi
+
+case $# in
+  4)
+    input=$1 start_position=$2 end_position=$3 output=$4
+    ffmpeg -i "$input" -ss "$start_position" -to "$end_position" -c copy "$output"
+    ;;
+  3)
+    input=$1 position=$2 output=$3
+    ffmpeg -ss "$position" -i "$input" -frames:v 1 "$output"
+    ;;
+esac

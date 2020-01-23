@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if test $# -lt 2 -o $# -gt 3; then
+  cat <<'EOF' | sed -E 's/^ {4}//' > /dev/stderr
+    Usage
+    ‾‾‾‾‾
+    ffmpeg-burn <input> <output> [subtitles-stream = 0]
+
+    Examples
+    ‾‾‾‾‾‾‾‾
+    ffmpeg-burn input.mkv output.mkv
+    ffmpeg-burn input.mkv output.mkv 1
+
+    You can see the subtitles streams with `ffmpeg -i` or more concisely in mpv.
+    It starts at 0.
+EOF
+  exit 1
+fi
+
+state=$(mktemp -d)
+subtitles=$state/subtitles.ass
+trap 'rm -Rf "$state"' EXIT
+
+input=$1 output=$2 subtitles_stream=${3:-0}
+ffmpeg -i "$input" -map "0:s:$subtitles_stream" "$subtitles"
+ffmpeg -i "$input" -max_muxing_queue_size 9999 -filter:v ass="$subtitles" "$output"
