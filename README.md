@@ -1,6 +1,6 @@
 # [FFmpeg] tools
 
-Collection of scripts for [FFmpeg].
+A collection of scripts for [FFmpeg].
 
 ## Requirements
 
