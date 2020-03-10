@@ -8,7 +8,7 @@ A collection of scripts for [FFmpeg].
 
 ## Installation
 
-Add the following files to your path.
+Add the following files to your path:
 
 - [`ffmpeg-burn`]
 - [`ffmpeg-cut`]
