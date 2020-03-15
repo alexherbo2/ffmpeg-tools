@@ -8,12 +8,9 @@ A collection of scripts for [FFmpeg].
 
 ## Installation
 
-Add the following files to your path:
-
-- [`ffmpeg-burn`]
-- [`ffmpeg-cut`]
-- [`ffmpeg-sub`]
-- [`ffmpeg-to-gif`]
+``` sh
+make install # Install bin into ~/.local/bin
+```
 
 ## Usage
 
