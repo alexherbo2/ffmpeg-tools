@@ -2,6 +2,8 @@
 
 A collection of scripts for [FFmpeg].
 
+[FFmpeg]: https://ffmpeg.org
+
 ## Requirements
 
 - [FFmpeg] compiled with `--enable-libass` (Optional, for [`ffmpeg-burn`]).
@@ -24,8 +26,6 @@ Then recall the command with the good parameters.
 - [`ffmpeg-cut`]: Cut audio and video.
 - [`ffmpeg-sub`]: Extract subtitles.
 - [`ffmpeg-to-gif`]: Convert videos to GIFs.
-
-[FFmpeg]: https://ffmpeg.org
 
 [`ffmpeg-burn`]: bin/ffmpeg-burn
 [`ffmpeg-cut`]: bin/ffmpeg-cut
