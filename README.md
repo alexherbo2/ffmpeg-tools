@@ -1,33 +1,16 @@
 # [FFmpeg] tools
 
-A collection of scripts for [FFmpeg].
+A collection of — single purpose and self-documented — [scripts] for [FFmpeg].
 
 [FFmpeg]: https://ffmpeg.org
-
-## Requirements
-
-- [FFmpeg] compiled with `--enable-libass` (Optional, for [`ffmpeg-burn`]).
+[Scripts]: bin
 
 ## Installation
 
 ``` sh
-make install # Install bin into ~/.local/bin
+make install
 ```
 
 ## Usage
 
-Simply call a command with no argument.
-It will display a help message and quit.
-Then recall the command with the good parameters.
-
-## Commands
-
-- [`ffmpeg-burn`]: Burn subtitles into video.
-- [`ffmpeg-cut`]: Cut audio and video.
-- [`ffmpeg-sub`]: Extract subtitles.
-- [`ffmpeg-to-gif`]: Convert videos to GIFs.
-
-[`ffmpeg-burn`]: bin/ffmpeg-burn
-[`ffmpeg-cut`]: bin/ffmpeg-cut
-[`ffmpeg-sub`]: bin/ffmpeg-sub
-[`ffmpeg-to-gif`]: bin/ffmpeg-to-gif
+Simply call a command without argument and it will tell you the usage.
